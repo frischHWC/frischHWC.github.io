@@ -26,7 +26,7 @@ Output should be:
 
 <img src="images/generated_to_hdfs.png" width="600">
 
-Let's verify:
+Let's Verify it {: .label .label-green }
 
 In a shell with a logged in user (optionally use datagen ones):
 
@@ -53,7 +53,7 @@ Output should be:
 
 <img src="images/generated_to_hive.png" width="600">
 
-Let's verify:
+Let's Verify {: .label .label-green }
 
 In a shell with a logged in user (optionally use datagen ones):
 
@@ -132,7 +132,7 @@ Output should be:
 
 <img src="images/generated_to_ozone.png" width="600">
 
-Let's verify:
+Let's Verify {: .label .label-green }
 
 In a shell with a logged in user (optionally use datagen ones):
 
@@ -174,7 +174,7 @@ Output should be:
 
 <img src="images/generated_to_hbase.png" width="600">
 
-Let's verify:
+Let's Verify {: .label .label-green }
 
 In a shell with a logged in user (optionally use datagen ones):
 
