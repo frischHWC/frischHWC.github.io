@@ -1,0 +1,46 @@
+{
+    "Fields": [
+      {
+        "name": "name",
+        "type": "NAME",
+        "filters": ["Germany"]
+      },
+      {
+        "name": "city",
+        "type": "CITY",
+        "filters": ["Germany"]
+      },
+      {
+        "name": "phone_number",
+        "type": "PHONE",
+        "filters": ["Germany"]
+      },
+      {
+        "name": "years_of_experience",
+        "type": "INTEGER",
+        "min": 0,
+        "max": 10
+      },
+      {
+        "name": "employee_id",
+        "type": "INCREMENT_INTEGER",
+        "min": 123456
+      },
+      {
+        "name": "department",
+        "type": "STRING",
+        "possible_values": ["HR", "CONSULTING", "FINANCE", "SALES", "ENGINEERING", "ADMINISTRATION", "MARKETING"]
+      }
+    ],
+    "Table_Names": [
+        {"HIVE_HDFS_FILE_PATH": "/user/datagen/hive/employee_model/"},
+        {"HIVE_DATABASE": "datagen_test"},
+        {"HIVE_TABLE_NAME":  "employee_model"},
+        {"HIVE_TEMPORARY_TABLE_NAME":  "employee_model_tmp"},
+        {"AVRO_NAME":  "datagenemployee"}
+    ],
+    "Primary_Keys": [
+    ],
+    "Options": [
+    ]
+  }

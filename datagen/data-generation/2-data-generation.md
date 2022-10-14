@@ -218,7 +218,8 @@ It will generate 1 million weather data like this (using the weather model under
 ```
 
 
-Let's Verify {: .label .label-green }
+Let's Verify
+{: .label .label-green }
 
 In Cloudera Manager > Solr > Collections Statistics, we can see the metrics of the new generated data:
 
@@ -259,7 +260,8 @@ It will generate 1 million weather data like this (using the weather model under
 { "city" : "Le Rove", "lat" : "43,3692", "long" : "5,2503", "reporting_timestamp" : "1665732947892", "emergency" : "URGENT", "type" : "WATER" }
 ```
 
-Let's Verify {: .label .label-green }
+Let's Verify
+{: .label .label-green }
 
 Go to Hue or an Impala shell and make an INVALIDATE METADATA command to refresh the cache, then you will be able to see in database: _datagen_ a new table _publicservice_incident_ :
 
@@ -299,7 +301,8 @@ It will generate 1 million weather data like this (using the weather model under
 { "city" : "Seysses", "date" : "2021-03-25", "lat" : "43,4981", "long" : "1,3125", "wind_provenance_9_am" : "NORTH", "wind_force_9_am" : "3", "wind_provenance_9_pm" : "WEST", "wind_force_9_pm" : "12", "pressure_9_am" : "1004", "pressure_9_pm" : "1008", "humidity_9_am" : "46", "humidity_9_pm" : "52", "temperature_9_am" : "22", "temperature_9_pm" : "-8", "rain" : "false" }
 ```
 
-Let's Verify {: .label .label-green }
+Let's Verify
+{: .label .label-green }
 
 You can make a kafka-console-consumer with enough rights and consume the topic from the beginning to verify production of messages.
 
@@ -431,7 +434,8 @@ A command UUID is returned and should be used to check the status of the data ge
 { "commandUuid": "61b9757f-78da-4773-9c5d-a3f154f2b524" , "status": "FINISHED" , "comment": "" , + "progress": "100.0" ,  "duration": "858ms" }
 ```
 
-Let's Verify {: .label .label-green }
+Let's Verify
+{: .label .label-green }
 
 In a shell with a logged in user (optionally use datagen ones):
 
