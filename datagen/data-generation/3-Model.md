@@ -33,10 +33,10 @@ A model file is composed of 4 sections (each of this section is an array):
 }
 ```
 
-* Section Field list all fields (columns) you want to generate with their type etc...
-* Table_Names is an array of keys/values to define where data should be generated
-* Primary_Keys is an array of keys/values to define what primary keys will be used for kafka, kudu, hbase
-* Options is an array of keys/values to define some specific properties (such as replication factor, buffer etc..) 
+* **Field** list all fields (columns) you want to generate with their type etc...
+* **Table_Names** is an array of keys/values to define where data should be generated
+* **Primary_Keys** is an array of keys/values to define what primary keys will be used for kafka, kudu, hbase
+* **Options** is an array of keys/values to define some specific properties (such as replication factor, buffer etc..) 
 
 
 Let's deep dive into each section below.
@@ -45,36 +45,36 @@ Let's deep dive into each section below.
 
 A field is an object consisting of at least two required parameters:
 
-- name: name of the field 
-- type: Type of the field
+- ****name**: name of the field 
+- ****type**: Type of the field
 
 Then, you will have multiple optional parameters that could depend on its type:
 
-- min
-- max
-- length
-- possible_values
-- possible_values_weighted
-- filters 
-- conditionals  _This is an object will see later_
+- **min**
+- **max**
+- **length**
+- **possible_values**
+- **possible_values_weighted**
+- **filters**
+- **conditionals**
 
 
-### Types of Fields - Basic
+### Types of Fields - **Basic
 
 Fields can be of many different types, here are the basic ones, self-explicit:
 
-- STRING  _an alphaNumeric string (length represents length of string, by default 20 if not set)_
-- STRINGAZ  _an alpha non-numeric string (length represents length of string, by default 20 if not set)_
-- INTEGER 
-- INCREMENT_INTEGER _An integer increment for each row_
-- INCREMENT_LONG _A long incremented for each row_
-- BOOLEAN 
-- FLOAT 
-- LONG 
-- TIMESTAMP 
-- BYTES _length represents length of byte array, by default 20_
-- HASHMD5   _hash of a random string (length represents size of byte array, by default 32)_
-- BLOB   _byte array of default 1MB (length represents length of byte array) (Use it carefully)_
+- **STRING**  _an alphaNumeric string (length represents length of string, by default 20 if not set)_
+- **STRINGAZ**  _an alpha non-numeric string (length represents length of string, by default 20 if not set)_
+- **INTEGER** 
+- **INCREMENT_INTEGER** _An integer increment for each row_
+- **INCREMENT_LONG** _A long incremented for each row_
+- **BOOLEAN** 
+- **FLOAT** 
+- **LONG** 
+- **TIMESTAMP** 
+- **BYTES** _length represents length of byte array, by default 20_
+- **HASHMD5**   _hash of a random string (length represents size of byte array, by default 32)_
+- **BLOB**   _byte array of default 1MB (length represents length of byte array) (Use it carefully)_
 
 
 Some Examples:
@@ -149,20 +149,20 @@ A string picked between values defined in possible_values_weighted, each has a d
 }
 ```
 
-### Types of Fields - Advanced
+### Types of Fields - **Advanced
 
 These are more "advanced" types :
 
-- BIRTHDATE  _a date between 1910 & 2020 (but you can set your own limits)_
-- NAME  _a first name taken from a dictionary of over 10,000+ names (can be filtered by country)_
-- COUNTRY   _a country name taken from a dictionary_
-- PHONE NUMBER A 10 digits with international indicator in front (can be filtered by country)_
-- EMAIL   _string as in form of (<name>.<name>|<AZ09><name>)@(gaagle.com|yahaa.com|uutlook.com|email.fr)_
-- IP   _a string representing an IP in form of Ipv4: 0-255.0-255.0-255.0-255_
-- UUID _an unique universal identifier: xxxx-xxxx-xxxx-xxxx_
-- CITY  _an object representing an existing city (name, lat, long, country) made from a dictionary of over 10,000+ cities, only the name is taken for this field (can be filtered by country)_
-- CSV   _an object taken from a given CSV file_
-- LINK  _a string whose values is derived from another field, currently from a CITY or CSV field_
+- **BIRTHDATE**  _a date between 1910 & 2020 (but you can set your own limits)_
+- **NAME**  _a first name taken from a dictionary of over 10,000+ names (can be filtered by country)_
+- **COUNTRY**   _a country name taken from a dictionary_
+- **PHONE NUMBER** A 10 digits with international indicator in front (can be filtered by country)_
+- **EMAIL**   _string as in form of (<name>.<name>|<AZ09><name>)@(gaagle.com|yahaa.com|uutlook.com|email.fr)_
+- **IP**   _a string representing an IP in form of Ipv4: 0-255.0-255.0-255.0-255_
+- **UUID** _an unique universal identifier: xxxx-xxxx-xxxx-xxxx_
+- **CITY**  _an object representing an existing city (name, lat, long, country) made from a dictionary of over 10,000+ cities, only the name is taken for this field (can be filtered by country)_
+- **CSV**   _an object taken from a given CSV file_
+- **LINK**  _a string whose values is derived from another field, currently from a CITY or CSV field_
 
 
 Some basic examples:
@@ -264,7 +264,7 @@ We can create two Fields:
 }
 ```
 
-### Conditionals - Formula
+### Conditionals - **Formula
 
 Conditionals is an object that allows you to define fields that are depending from others.
 
@@ -281,13 +281,13 @@ Formula, is a formula to evaluate where _${field_name}_ are replaced with their 
   "name": "finished_hour",
   "type": "INTEGER",
   "conditionals": {
-    "formula": "$starting_hour + 8"
+    "formula": "$starting_hour** 8"
   }
 },
 ```
 
 
-### Conditionals - injection
+### Conditionals - **injection
 
 Conditionals is an object that allows you to define fields that are depending from others.
 
@@ -303,7 +303,7 @@ Injection, is a string where _${field_name}_ are replaced with their values, for
 }
 ```
 
-### Conditionals - Conditions Line
+### Conditionals - **Conditions Line
 
 Conditionals is an object that allows you to define fields that are depending from others.
 
@@ -334,65 +334,65 @@ An example:
 
 These are all available keys to configure where data should be generated:
 
-- HDFS_FILE_PATH +
-- HDFS_FILE_NAME +
-- HBASE_TABLE_NAME +
-- HBASE_NAMESPACE +
-- KAFKA_TOPIC +
-- OZONE_VOLUME +
-- OZONE_BUCKET +
-- OZONE_KEY_NAME +
-- OZONE_LOCAL_FILE_PATH +
-- SOLR_COLLECTION +
-- HIVE_DATABASE +
-- HIVE_HDFS_FILE_PATH +
-- HIVE_TABLE_NAME +
-- HIVE_TEMPORARY_TABLE_NAME +
-- KUDU_TABLE_NAME +
-- LOCAL_FILE_PATH +
-- LOCAL_FILE_NAME +
-- AVRO_NAME +
+- **HDFS_FILE_PATH**
+- **HDFS_FILE_NAME**
+- **HBASE_TABLE_NAME**
+- **HBASE_NAMESPACE**
+- **KAFKA_TOPIC**
+- **OZONE_VOLUME**
+- **OZONE_BUCKET**
+- **OZONE_KEY_NAME**
+- **OZONE_LOCAL_FILE_PATH**
+- **SOLR_COLLECTION**
+- **HIVE_DATABASE**
+- **HIVE_HDFS_FILE_PATH**
+- **HIVE_TABLE_NAME**
+- **HIVE_TEMPORARY_TABLE_NAME**
+- **KUDU_TABLE_NAME**
+- **LOCAL_FILE_PATH**
+- **LOCAL_FILE_NAME**
+- **AVRO_NAME**
 
 
 ## Primary_Keys
 
 These are all the available keys to configure for some services:
 
-- KAFKA_MSG_KEY +
-- HBASE_PRIMARY_KEY +
-- KUDU_PRIMARY_KEYS +
-- KUDU_HASH_KEYS +
-- KUDU_RANGE_KEYS
+- **KAFKA_MSG_KEY**
+- **HBASE_PRIMARY_KEY**
+- **KUDU_PRIMARY_KEYS**
+- **KUDU_HASH_KEYS**
+- **KUDU_RANGE_KEYS
 
 ## Options
 
-This are all the available keys to configure basic settings for some services: +
+This are all the available keys to configure basic settings for some services:**
 
-- HBASE_COLUMN_FAMILIES_MAPPING +
-        This mapping must be in the form : "CF:col1,col2;CF2:col5" +
-- SOLR_SHARDS +
-- SOLR_REPLICAS +
-- KUDU_REPLICAS +
-- ONE_FILE_PER_ITERATION +
-- KAFKA_MESSAGE_TYPE +
-- KAFKA_JAAS_FILE_PATH +
-- SOLR_JAAS_FILE_PATH +
-- HIVE_THREAD_NUMBER +
-- HIVE_ON_HDFS +
-- HIVE_TEZ_QUEUE_NAME +
-- CSV_HEADER +
-- DELETE_PREVIOUS +
-- PARQUET_PAGE_SIZE +
-- PARQUET_ROW_GROUP_SIZE +
-- PARQUET_DICTIONARY_PAGE_SIZE +
-- PARQUET_DICTIONARY_ENCODING +
-- KAFKA_ACKS_CONFIG +
-- KAFKA_RETRIES_CONFIG +
-- KUDU_BUCKETS +
-- KUDU_BUFFER +
-- KUDU_FLUSH +
-- OZONE_REPLICATION_FACTOR +
-- HDFS_REPLICATION_FACTOR +
+- **HBASE_COLUMN_FAMILIES_MAPPING**
+        This mapping must be in the form : "CF:col1,col2;CF2:col5"
+- **SOLR_SHARDS**
+- **SOLR_REPLICAS**
+- **KUDU_REPLICAS**
+- **ONE_FILE_PER_ITERATION**
+- **KAFKA_MESSAGE_TYPE**
+- **KAFKA_JAAS_FILE_PATH**
+- **SOLR_JAAS_FILE_PATH**
+- **HIVE_THREAD_NUMBER**
+- **HIVE_ON_HDFS**
+- **HIVE_TEZ_QUEUE_NAME**
+- **CSV_HEADER**
+- **DELETE_PREVIOUS**
+- **PARQUET_PAGE_SIZE**
+- **PARQUET_ROW_GROUP_SIZE**
+- **PARQUET_DICTIONARY_PAGE_SIZE**
+- **PARQUET_DICTIONARY_ENCODING**
+- **KAFKA_ACKS_CONFIG**
+- **KAFKA_RETRIES_CONFIG**
+- **KUDU_BUCKETS**
+- **KUDU_BUFFER**
+- **KUDU_FLUSH**
+- **OZONE_REPLICATION_FACTOR**
+- **HDFS_REPLICATION_FACTOR**
 
 
 ## Example on how to create a model ?
@@ -401,13 +401,13 @@ Let's create a simple model to generate some data into Hive file:
 
 I would like to generate something that will represent employees:
 
-- A name
-- Their location city
-- Their birthdate
-- Their phone number
-- Years of experience in the company
-- Their employee ID (in 6 digits)
-- Their department (among HR, CONSULTING, FINANCE, SALES, ENGINEERING, ADMINISTRATION, MARKETING) 
+- **A name
+- **Their location city
+- **Their birthdate
+- **Their phone number
+- **Years of experience in the company
+- **Their employee ID (in 6 digits)
+- **Their department (among HR, CONSULTING, FINANCE, SALES, ENGINEERING, ADMINISTRATION, MARKETING) 
 
 And the company is based in Germany, as all employees by the way.
 

@@ -8,17 +8,18 @@ permalink: datagen
 
 # Datagen
 
-Datagen is a project that aims at providing a user-friendly, cusstomizable interface to generate data into the various CDP services. (or even outside of the platform).
+Datagen is a project that aims at providing a user-friendly, customizable interface to generate data into the various Cloudera Data Platform services. (or even outside of the platform).
 
 
 ## What is it ?
 
 It is a web server exposing APIs to generate data. 
 
-Data generated is shaped if what is called a model. It comes with prebuilt models but anyone can defined its own model and provide it to generate data in any services.
+Data generated is shaped in what is called a model. It comes with prebuilt models but anyone can defined its own model and provide it to generate data in any services.
 
 Data can be generated into HDFS (CSV, Avro, Parquet, JSON, ORC), HBase, Hive, Solr, Kudu, Kafka, Ozone (CSV, Avro, Parquet, JSON, ORC) and in local files (CSV, Avro, Parquet, JSON, ORC).
 
+Data generation can also be scheduled to run on a periodic basis.
 
 ## Requirements
 
