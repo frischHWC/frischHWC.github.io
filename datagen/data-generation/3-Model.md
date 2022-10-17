@@ -267,7 +267,7 @@ We can create two Fields:
 }
 ```
 
-### Conditionals - **Formula
+### Conditionals - Formula
 
 Conditionals is an object that allows you to define fields that are depending from others.
 
@@ -290,7 +290,7 @@ Formula, is a formula to evaluate where _${field_name}_ are replaced with their 
 ```
 
 
-### Conditionals - **injection
+### Conditionals - Injection
 
 Conditionals is an object that allows you to define fields that are depending from others.
 
@@ -306,7 +306,7 @@ Injection, is a string where _${field_name}_ are replaced with their values, for
 }
 ```
 
-### Conditionals - **Conditions Line
+### Conditionals - Conditions Line
 
 Conditionals is an object that allows you to define fields that are depending from others.
 
