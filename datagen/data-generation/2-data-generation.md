@@ -363,26 +363,26 @@ Do not be scared ! **ALL PARAMETERS ARE OPTIONAL and have default values if you 
 
 All APIs calls for data generation have at least 5 parameters in common:
 
-* rows = Number of rows to generate at each batch of data generation
-* batches = Number of batches to launch (you will end up to have (rows x batches) total rows generated)
-* threads = To speed up generation, you can multi thread this (by default it is single-threaded), it is recommended to go on 10 threads.
+* **rows** = Number of rows to generate at each batch of data generation
+* **batches** = Number of batches to launch (you will end up to have (rows x batches) total rows generated)
+* **threads** = To speed up generation, you can multi thread this (by default it is single-threaded), it is recommended to go on 10 threads.
 * model by specifiying either:
-    * model_file = file path on the machine where a model is present (for example /opt/cloudera/parcels/DATAGEN/models/public_service/weather-model.json)
-    * model = upload directly to the swagger your model file from your computer
-
+    * **model_file** = file path on the machine where a model is present (for example /opt/cloudera/parcels/DATAGEN/models/public_service/weather-model.json)
+    * **model** = upload directly to the swagger your model file from your computer
 
 There are 3 parameters related to kerberos authentication:
 
-* kerb_auth = true or false depending on using kerberos or not
-* kerb_user = kerberos user to log in with to make data generation
-* kerb_keytab = path to the keytab of this user to login with (must be datagen user's readable)
+* **kerb_auth** = true or false depending on using kerberos or not
+* **kerb_user** = kerberos user to log in with to make data generation
+* **kerb_keytab** = path to the keytab of this user to login with (must be datagen user's readable)
 
 By default, all these are set to the datagen's user.
 
 There are also 2 other parameters that enables you to schedule a launch:
 
-* scheduled = true or false
-* delay_between_executions_seconds = The interval (in seconds) between two executions
+* **scheduled** = true or false
+* **delay_between_executions_seconds** = The interval (in seconds) between two executions
+
 
 All These parameters are discussed further in [section on APIs](../advanced/1-apis.md).
 

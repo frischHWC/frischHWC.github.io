@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Adavanced - Metrics
+title: Advanced - Metrics
 parent: Advanced
 grand_parent: Datagen
 permalink: /datagen/advanced/metrics

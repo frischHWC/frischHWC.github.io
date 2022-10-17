@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Adavanced - APIs
+title: Advanced - APIs
 parent: Advanced
 grand_parent: Datagen
 permalink: /datagen/advanced/api
@@ -33,25 +33,25 @@ Some parameters are available foreach API call but **All parameters are optional
 
 All APIs calls for data generation have at least 5 parameters in common:
 
-* rows = Number of rows to generate at each batch of data generation
-* batches = Number of batches to launch (you will end up to have (rows x batches) total rows generated)
-* threads = To speed up generation, you can multi thread this (by default it is single-threaded), it is recommended to go on 10 threads.
+* **rows** = Number of rows to generate at each batch of data generation
+* **batches** = Number of batches to launch (you will end up to have (rows x batches) total rows generated)
+* **threads** = To speed up generation, you can multi thread this (by default it is single-threaded), it is recommended to go on 10 threads.
 * model by specifiying either:
-    * model_file = file path on the machine where a model is present (for example /opt/cloudera/parcels/DATAGEN/models/public_service/weather-model.json)
-    * model = upload directly to the swagger your model file from your computer
+    * **model_file** = file path on the machine where a model is present (for example /opt/cloudera/parcels/DATAGEN/models/public_service/weather-model.json)
+    * **model** = upload directly to the swagger your model file from your computer
 
 There are 3 parameters related to kerberos authentication:
 
-* kerb_auth = true or false depending on using kerberos or not
-* kerb_user = kerberos user to log in with to make data generation
-* kerb_keytab = path to the keytab of this user to login with (must be datagen user's readable)
+* **kerb_auth** = true or false depending on using kerberos or not
+* **kerb_user** = kerberos user to log in with to make data generation
+* **kerb_keytab** = path to the keytab of this user to login with (must be datagen user's readable)
 
 By default, all these are set to the datagen's user.
 
 There are also 2 other parameters that enables you to schedule a launch:
 
-* scheduled = true or false
-* delay_between_executions_seconds = The interval (in seconds) between two executions
+* **scheduled** = true or false
+* **delay_between_executions_seconds** = The interval (in seconds) between two executions
 
 
 ### Specific parameters
@@ -176,7 +176,7 @@ Output example:
 "HDFS_AVRO_FILES_GENERATED" : 0,
 "OZONE_PARQUET_ROWS_GENERATED" : 0,
 "HIVE_ROWS_GENERATED" : 100000,
-"ALL_ROWS_GENERATED" : 1100401,
+"ALL_ROWS_GENERATED" : 1100022,
 "AVRO_ROWS_GENERATED" : 0,
 "CSV_FILES_GENERATED" : 21,
 "HDFS_CSV_FILES_GENERATED" : 0,
