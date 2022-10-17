@@ -193,7 +193,7 @@ In Cloudera Manager, got to Datagen > Configurations and look for _solr_.
 
 You need to fill in the Solr Zookeeper Quorum like this:
 
-<img src="images/config-solr.png" width="500">
+<img src="images/config-solr.png" width="700">
 
 Once done, restart Datagen.
 
@@ -207,7 +207,7 @@ It launches a Cloudera Manager command making different API calls to Datagen Web
 
 Output should be:
 
-<img src="images/generated_to_solr.png" width="600">
+<img src="images/generated_to_solr.png" width="700">
 
 
 It will generate 1 million weather data like this (using the weather model under _/opt/cloudera/parcels/DATAGEN/models/public_service/weather-model.json_)
@@ -221,12 +221,8 @@ It will generate 1 million weather data like this (using the weather model under
 Let's Verify
 {: .label .label-green }
 
-In Cloudera Manager > Solr > Collections Statistics, we can see the metrics of the new generated data:
 
-<img src="images/solr_cm_metrics.png" width="700">
-
-
-If you can access SolR UI, (usually through Knox with a user with enough rights), you can see the data:
+Access SolR UI, (login as a user with enough rights):
 
 
 <img src="images/solr_ui_query.png" width="700">
@@ -250,7 +246,7 @@ It launches a Cloudera Manager command making different API calls to Datagen Web
 
 Output should be:
 
-<img src="images/generated_to_kudu.png" width="600">
+<img src="images/generated_to_kudu.png" width="700">
 
 
 It will generate 1 million weather data like this (using the weather model under _/opt/cloudera/parcels/DATAGEN/models/public_service/incident-model.json_ )
@@ -265,7 +261,7 @@ Let's Verify
 
 Go to Hue or an Impala shell and make an INVALIDATE METADATA command to refresh the cache, then you will be able to see in database: _datagen_ a new table _publicservice_incident_ :
 
-<img src="images/kudu_from_impala.png" width="600">
+<img src="images/kudu_from_impala.png" width="800">
 
 
 ### Kafka
@@ -274,16 +270,16 @@ In Cloudera Manager, got to Datagen > Configurations and look for _kafka_.
 
 You need to fill in the Kafka Broker URL like this:
 
-<img src="images/config-kafka.png" width="500">
+<img src="images/config-kafka.png" width="700">
 
 
 You need to fill in the Schema Registry URL like this:
 
-<img src="images/config-sr.png" width="500">
+<img src="images/config-sr.png" width="700">
 
 In Cloudera Manager: 
 
-**Datagen > Actions > Generates Local data as CSV, JSON, AVRO, ORC, PARQUET**
+**Datagen > Actions > Generates 1 million weather data to Kafka in JSON OR Public Service Data to Kafka in Avro**
 
 <img src="images/generates_to_kafka.png" width="500">
 
@@ -291,7 +287,7 @@ It launches a Cloudera Manager command making different API calls to Datagen Web
 
 Output should be:
 
-<img src="images/generated_to_kafka.png" width="600">
+<img src="images/generated_to_kafka.png" width="700">
 
 
 It will generate 1 million weather data like this (using the weather model under _/opt/cloudera/parcels/DATAGEN/models/public_service/weather-model.json_)
@@ -308,17 +304,17 @@ You can make a kafka-console-consumer with enough rights and consume the topic f
 
 But we will instead login to Streams Messaging Manager with a user's with enough rights and see data:
 
-<img src="images/kafka_smm_json.png" width="600">
+<img src="images/kafka_smm_json.png" width="800">
 
 
 If you picked th data generation with AVRO format, in Streams Messaging Manager:
 
-<img src="images/kafka_smm_avro.png" width="600">
+<img src="images/kafka_smm_avro.png" width="800">
 
 
 If you picked th data generation with AVRO format, you can go to Schema Registry URL (login with a user's with enough rights) and see the newly added schema:
 
-<img src="images/kafka_sr_avro.png" width="600">
+<img src="images/kafka_sr_avro.png" width="800">
 
 
 Finally, if you have SQL Stream Builder installed in your cluster, make sure that user's ssb & flink have access rights to generated topic, logged to the web console, upload your keytab if necessary and create the table on kafka topic (in JSON):
@@ -327,7 +323,7 @@ Finally, if you have SQL Stream Builder installed in your cluster, make sure tha
 
 Then do a sample query to visualize data:
 
-<img src="images/kafka_ssb_query.png" width="600">
+<img src="images/kafka_ssb_query.png" width="800">
 
 
 ## APIs 

@@ -33,7 +33,7 @@ A model file is composed of 4 sections (each of this section is an array):
 }
 ```
 
-* **Field** list all fields (columns) you want to generate with their type etc...
+* **Fields** list all fields (columns) you want to generate with their type etc...
 * **Table_Names** is an array of keys/values to define where data should be generated
 * **Primary_Keys** is an array of keys/values to define what primary keys will be used for kafka, kudu, hbase
 * **Options** is an array of keys/values to define some specific properties (such as replication factor, buffer etc..) 
@@ -43,12 +43,14 @@ Let's deep dive into each section below.
 
 ## Fields
 
+Fields is a list of Field object.
+
 A field is an object consisting of at least two required parameters:
 
-- ****name**: name of the field 
-- ****type**: Type of the field
+- **name**: name of the field 
+- **type**: Type of the field
 
-Then, you will have multiple optional parameters that could depend on its type:
+Then, multiple optional parameters that could depend on its type:
 
 - **min**
 - **max**
@@ -58,8 +60,9 @@ Then, you will have multiple optional parameters that could depend on its type:
 - **filters**
 - **conditionals**
 
+Let's explorate the different types of fields and their possible parameters.
 
-### Types of Fields - **Basic
+### Types of Fields - Basic
 
 Fields can be of many different types, here are the basic ones, self-explicit:
 
@@ -149,12 +152,12 @@ A string picked between values defined in possible_values_weighted, each has a d
 }
 ```
 
-### Types of Fields - **Advanced
+### Types of Fields - Advanced
 
 These are more "advanced" types :
 
 - **BIRTHDATE**  _a date between 1910 & 2020 (but you can set your own limits)_
-- **NAME**  _a first name taken from a dictionary of over 10,000+ names (can be filtered by country)_
+- **NAME**  _a first name taken from a dictionary of over 20,000+ names (can be filtered by country)_
 - **COUNTRY**   _a country name taken from a dictionary_
 - **PHONE NUMBER** A 10 digits with international indicator in front (can be filtered by country)_
 - **EMAIL**   _string as in form of (<name>.<name>|<AZ09><name>)@(gaagle.com|yahaa.com|uutlook.com|email.fr)_
@@ -309,7 +312,7 @@ Conditionals is an object that allows you to define fields that are depending fr
 
 Conditions Lines are a bunch of lines evaluated one after the other, if one is true, then value is set to right expression.
 
-Each conditional line is composed of conditions in the form of a field name (reported by a $) which is substituted by its value and operators (<,>,=,!=) that will check against a defined value or a field (which is also substituted). The condition line can be composed of multiple checks using & (AND) or | (OR) operators.
+Each conditional line is composed of conditions in the form of a field name (reported by a $) which is substituted by its value and operators (`<`,`>`,`=`,`!=`) that will check against a defined value or a field (which is also substituted). The condition line can be composed of multiple checks using `&` (AND) or `|` (OR) operators.
 
 An example:
 
@@ -361,16 +364,15 @@ These are all the available keys to configure for some services:
 - **KAFKA_MSG_KEY**
 - **HBASE_PRIMARY_KEY**
 - **KUDU_PRIMARY_KEYS**
-- **KUDU_HASH_KEYS**
-- **KUDU_RANGE_KEYS
+- **KUDU_HASH_KEYS** 
+- **KUDU_RANGE_KEYS** 
 
 ## Options
 
 This are all the available keys to configure basic settings for some services:**
 
-- **HBASE_COLUMN_FAMILIES_MAPPING**
-        This mapping must be in the form : "CF:col1,col2;CF2:col5"
-- **SOLR_SHARDS**
+- **HBASE_COLUMN_FAMILIES_MAPPING** _This mapping must be in the form : "CF:col1,col2;CF2:col5"_
+- **SOLR_SHARDS** 
 - **SOLR_REPLICAS**
 - **KUDU_REPLICAS**
 - **ONE_FILE_PER_ITERATION**
@@ -401,13 +403,13 @@ Let's create a simple model to generate some data into Hive file:
 
 I would like to generate something that will represent employees:
 
-- **A name
-- **Their location city
-- **Their birthdate
-- **Their phone number
-- **Years of experience in the company
-- **Their employee ID (in 6 digits)
-- **Their department (among HR, CONSULTING, FINANCE, SALES, ENGINEERING, ADMINISTRATION, MARKETING) 
+- A name
+- Their location city
+- Their birthdate
+- Their phone number
+- Years of experience in the company
+- Their employee ID (in 6 digits)
+- Their department (among HR, CONSULTING, FINANCE, SALES, ENGINEERING, ADMINISTRATION, MARKETING) 
 
 And the company is based in Germany, as all employees by the way.
 
@@ -497,7 +499,7 @@ Returns following UUID:
 
 In Datagen Webserver logs, we can see at the end:
 
-<img src="images/model_test_log.png" width="500">
+<img src="images/model_test_log.png" width="700">
 
 
 Let's Verify
@@ -505,4 +507,4 @@ Let's Verify
 
 If you log into hue with enough privileges (or beeline), we have a new database: _datagen_test_ with a table _employee_model_ and some data in it:
 
-<img src="images/model_test_hue.png" width="500">
+<img src="images/model_test_hue.png" width="700">
