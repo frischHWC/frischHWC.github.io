@@ -140,7 +140,8 @@ Output should be:
 
 <img src="images/generated_to_local.png" width="600">
 
-Let's Verify {: .label .label-green }
+Let's Verify
+{: .label .label-green }
 
 In a shell with a logged in user (optionally use datagen ones):
 

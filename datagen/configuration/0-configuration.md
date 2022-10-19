@@ -2,7 +2,6 @@
 layout: default
 title: Configuration
 parent: Datagen
-grand_parent: Datagen
 nav_order: 3
 ---
 
