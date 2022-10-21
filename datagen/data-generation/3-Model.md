@@ -284,9 +284,9 @@ Formula, is a formula to evaluate where _${field_name}_ are replaced with their 
   "name": "finished_hour",
   "type": "INTEGER",
   "conditionals": {
-    "formula": "$starting_hour** 8"
+    "formula": "$starting_hour + 8"
   }
-},
+}
 ```
 
 

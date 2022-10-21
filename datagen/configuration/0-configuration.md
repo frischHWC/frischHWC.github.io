@@ -47,32 +47,31 @@ All properties are injected into the application file and passed to the web serv
 
 When starting up, Datagen is loading the _application.properties_ in-memory and proceeds to what is called an auto-discovery.
 
-Instead of passing all configurations, user can only rely on fields described as **AUTO-DISCOVERY**, that are by defaults are filled in. 
+When setup in CDP, Datagen (if _cm.autodiscovery_ is true) will make an auto-discovery of **ALL** services using CM API. (User does not need to specify anything).
+
+It also possible rely on fields described as **AUTO-DISCOVERY**, that are by defaults are filled in. 
 
 These fields, referenced properties file such as _hdfs-site.xml, hive-site.xml_ etc... 
 With this, Datagen parsed these files and automatically configure all possible other fields.
 
 Once started, you can see such logs in Datagen Web Server:
 
+
+If using CM auto-discovery:
+
 ```shell
-2022-10-13 13:33:49,219 DEBUG [main] com.cloudera.frisch.randomdatagen.Utils: Return value: hdfs://nameservice from file: dev-support/test_files/core-site.xml for property: fs.defaultFS
+9:35:04.701 AM INFO PropertiesLoader [main] Going to auto-discover hbase.zookeeper.quorum with CM API
+9:35:04.701 AM 	INFO PropertiesLoader [main] Going to auto-discover hbase.zookeeper.port with CM API
+```
+
+If not using CM auto-discovery but configuration files auto-discovery:
+
+```shell
 2022-10-13 13:33:49,220 INFO  [main] com.cloudera.frisch.randomdatagen.config.PropertiesLoader: Going to auto-discover hbase.zookeeper.quorum
 2022-10-13 13:33:49,222 DEBUG [main] com.cloudera.frisch.randomdatagen.Utils: Return value: server_zk1,server_zk_2,server_zk_3 from file: dev-support/test_files/hbase-site.xml for property: hbase.zookeeper.quorum
 2022-10-13 13:33:49,222 INFO  [main] com.cloudera.frisch.randomdatagen.config.PropertiesLoader: Going to auto-discover hbase.zookeeper.port
 2022-10-13 13:33:49,223 DEBUG [main] com.cloudera.frisch.randomdatagen.Utils: Return value: 2181 from file: dev-support/test_files/hbase-site.xml for property: hbase.zookeeper.property.clientPort
-2022-10-13 13:33:49,224 INFO  [main] com.cloudera.frisch.randomdatagen.config.PropertiesLoader: Going to auto-discover hbase.zookeeper.znode
-2022-10-13 13:33:49,225 DEBUG [main] com.cloudera.frisch.randomdatagen.Utils: Return value: /hbase from file: dev-support/test_files/hbase-site.xml for property: zookeeper.znode.parent
-2022-10-13 13:33:49,225 INFO  [main] com.cloudera.frisch.randomdatagen.config.PropertiesLoader: Going to auto-discover ozone.service.id
-2022-10-13 13:33:49,228 DEBUG [main] com.cloudera.frisch.randomdatagen.Utils: Return value: ozone1 from file: dev-support/test_files/ozone-site.xml for property: ozone.service.id
 ```
-
-
-## Special Cases of Kafka, Kudu & SolR
-
-Kafka, Kudu & SolR are the only 3 services that currently cannot be auto-discovered, so they need manual entry in Cloudera Manager.
-
-_N.B.: If you use a deployment built from source, it will use CM API to automatically configure these 3 services, so you have nothing else to do_
-
 
 ## Settings in APIs
 

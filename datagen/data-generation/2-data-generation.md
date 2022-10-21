@@ -188,16 +188,6 @@ sensor_data-0000000000.orc
 
 ### SolR
 
-**WARNING: To send data to SolR, you need to configure it before**
-
-In Cloudera Manager, got to Datagen > Configurations and look for _solr_.
-
-You need to fill in the Solr Zookeeper Quorum like this:
-
-<img src="images/config-solr.png" width="700">
-
-Once done, restart Datagen.
-
 In Cloudera Manager: 
 
 **Datagen > Actions > Generates Local data as CSV, JSON, AVRO, ORC, PARQUET**
@@ -231,11 +221,6 @@ Access SolR UI, (login as a user with enough rights):
 
 ### Kudu
 
-In Cloudera Manager, got to Datagen > Configurations and look for _kudu_.
-
-You need to fill in the Kudu URL like this:
-
-<img src="images/config-kudu.png" width="500">
 
 In Cloudera Manager: 
 
@@ -266,19 +251,6 @@ Go to Hue or an Impala shell and make an INVALIDATE METADATA command to refresh 
 
 
 ### Kafka
-
-In Cloudera Manager, got to Datagen > Configurations and look for _kafka_.
-
-You need to fill in the Kafka Broker URL like this:
-
-<img src="images/config-kafka.png" width="700">
-
-
-You need to fill in the Schema Registry URL like this:
-
-<img src="images/config-sr.png" width="700">
-
-In Cloudera Manager: 
 
 **Datagen > Actions > Generates 1 million weather data to Kafka in JSON OR Public Service Data to Kafka in Avro**
 
