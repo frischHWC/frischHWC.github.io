@@ -19,7 +19,7 @@ Note that this has been written for _CDP-7.1.7.1000_ and _DATAGEN-0.2.5_, for fu
 Go to Cloudera Manager and make a curl or wget of this:
 
 ```shell
-wget https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.0/7.1.7.1000/DATAGEN-0.3.0.7.1.7.1000.jar
+wget https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.1/7.1.7.1000/DATAGEN-0.3.1.7.1.7.1000.jar
 ```
 
 Make a copy of the downloaded jar file into /opt/cloudera/csd/:
@@ -43,7 +43,7 @@ Go to Cloudera Manager, in _Parcels > Parcel Repositories & Network_:
 <img src="images/install-csd-parcel/parcels_repositories_and_network_settings_button.png" width="700">
 
 
-Add this public repository to Cloudera Manager: [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.0/7.1.7.1000](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.0/7.1.7.1000)
+Add this public repository to Cloudera Manager: [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.1/7.1.7.1000](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.1/7.1.7.1000)
 
 
 Save & Verify to make sure URL is correct, you should have:
