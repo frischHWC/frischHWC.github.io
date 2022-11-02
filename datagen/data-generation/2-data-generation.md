@@ -130,7 +130,7 @@ It will generate 1 000 000 sensors data like this (each can be linked to a senso
 
 In Cloudera Manager: 
 
-**Datagen > Actions > Generates Local data as CSV, JSON, AVRO, ORC, PARQUET**
+**Datagen > Actions > Generate Local data as CSV, JSON, AVRO, ORC, PARQUET**
 
 <img src="images/generates_to_local.png" width="500">
 
@@ -190,7 +190,7 @@ sensor_data-0000000000.orc
 
 In Cloudera Manager: 
 
-**Datagen > Actions > Generates Local data as CSV, JSON, AVRO, ORC, PARQUET**
+**Datagen > Actions > Generate 1 Million Weather Data to SolR**
 
 <img src="images/generates_to_solr.png" width="500">
 
@@ -224,7 +224,7 @@ Access SolR UI, (login as a user with enough rights):
 
 In Cloudera Manager: 
 
-**Datagen > Actions > Generates Local data as CSV, JSON, AVRO, ORC, PARQUET**
+**Datagen > Actions > Generate 1 Million Public Service Data to Kudu**
 
 <img src="images/generates_to_kudu.png" width="500">
 
@@ -252,7 +252,7 @@ Go to Hue or an Impala shell and make an INVALIDATE METADATA command to refresh 
 
 ### Kafka
 
-**Datagen > Actions > Generates 1 million weather data to Kafka in JSON OR Public Service Data to Kafka in Avro**
+**Datagen > Actions > Generate 1 million weather data to Kafka in JSON OR Public Service Data to Kafka in Avro**
 
 <img src="images/generates_to_kafka.png" width="500">
 

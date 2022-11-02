@@ -16,7 +16,7 @@ Let's do it !
 
 In Cloudera Manager: 
 
-**Datagen > Actions > Generates 1 Million Customers to HDFS**
+**Datagen > Actions > Generate 1 Million Customers to HDFS**
 
 <img src="images/generates_to_hdfs.png" width="500">
 
@@ -44,7 +44,7 @@ Found 90 items
 
 In Cloudera Manager: 
 
-**Datagen > Actions > Generates 10 Million Sensors Data to Hive**
+**Datagen > Actions > Generate 10 Million Sensors Data to Hive**
 
 <img src="images/generates_to_hive.png" width="500">
 
@@ -124,7 +124,7 @@ INFO  : OK
 
 In Cloudera Manager: 
 
-**Datagen > Actions > Generates 1 Million Customers to Ozone**
+**Datagen > Actions > Generate 1 Million Customers to Ozone**
 
 <img src="images/generates_to_ozone.png" width="500">
 
@@ -167,7 +167,7 @@ ozone sh key list datagen/customer
 
 In Cloudera Manager: 
 
-**Datagen > Actions > Generates 1 Million Transaction to HBase**
+**Datagen > Actions > Generate 1 Million Transaction to HBase**
 
 <img src="images/generates_to_hbase.png" width="500">
 
