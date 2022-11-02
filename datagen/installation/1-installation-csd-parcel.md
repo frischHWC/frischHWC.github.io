@@ -11,12 +11,21 @@ nav_order: 1
 
 This tutorial requires a running **CDP 7.1.7+** platform with admin access to Cloudera Manager.
 
-Note that this has been written for _CDP-7.1.7.1000_ and _DATAGEN-0.2.5_, for future releases, please change the repository to point to the new release.
+Note that this has been written for _CDP-7.1.7.1000_ and _DATAGEN-0.3.1_, for future releases, please change the repository to point to the new release.
+
+## List of links for last release
+
+| CDP Version        | CSD URL           | Parcel URL        |
+|:-------------------|:------------------|:------------------|
+| 7.1.7.0            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.1/7.1.7.0/DATAGEN-0.3.1.7.1.7.0.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.1/7.1.7.0/DATAGEN-0.3.1.7.1.7.0.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.1/7.1.7.0/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.1/7.1.7.0/)             |
+| 7.1.7.1000            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.1/7.1.7.1000/DATAGEN-0.3.1.7.1.7.1000.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.1/7.1.7.1000/DATAGEN-0.3.1.7.1.7.1000.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.1/7.1.7.1000/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.1/7.1.7.1000/)             |
+| 7.1.8.0            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.1/7.1.8.0/DATAGEN-0.3.1.7.1.8.0.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.1/7.1.8.0/DATAGEN-0.3.1.7.1.8.0.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.1/7.1.8.0/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.3.1/7.1.8.0/)             |
+
 
 
 ## Setup CSD
 
-Go to Cloudera Manager and make a curl or wget of this:
+Go to Cloudera Manager and make a wget of this:
 
 ```shell
 wget https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.3.1/7.1.7.1000/DATAGEN-0.3.1.7.1.7.1000.jar
@@ -88,6 +97,8 @@ Now, it is possible to add Datagen as a Service to CDP:
 
 Start the Add Wizard by clicking on _Continue_.
 
+Select the Ranger dependency, if you are running Ranger (and you should), so Datagen can automatically creates policies in Ranger.
+
 Select where to places Datagen servers (best is to start with only one and scale up later if needed):
 
 <img src="images/install-csd-parcel/add_wizard_roles.png" width="500">
@@ -105,29 +116,6 @@ You should end up with:
 Restart CMS before going on: _Clusters > Cloudera Management Service_ , then _Actions > Restart_.
 
 
-## Init Service
-
-Before generating data, few steps are required to initialize the service.
-
-Go to Datagen service and in _Actions_ : 
-
-* Choose Datagen home directory locally  
-
-    <img src="images/install-csd-parcel/create_datagen_home_dir.png" width="500">
-
-* Choose Initialize service dirs and policies
-
-    <img src="images/install-csd-parcel/init_service_dirs_policies.png" width="500">
-
-
-    This last step used the previous Ranger settings URL, user/password to push policies required by datagen to Ranger.
-
-    You can safely remove these settings after this command is successful.  
-
-
-* Eventually, you can restart Cloudera Management Service, so they can start to monitor Datagen service.
-
-
 ## Start Service
 
 In _Actions > Start_.
@@ -140,7 +128,6 @@ Once command pop up launched, you can browse _Role Log_ and click on _Full Log F
 and verify it started well, you should have:
 
 <img src="images/install-csd-parcel/datagen_started.png" width="600">
-
 
 
 
