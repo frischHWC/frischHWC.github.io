@@ -382,6 +382,9 @@ This are all the available keys to configure basic settings for some services:**
 - **HIVE_THREAD_NUMBER**
 - **HIVE_ON_HDFS**
 - **HIVE_TEZ_QUEUE_NAME**
+- **HIVE_TABLE_PARTITIONS_COLS** _This must be a comma separated list of cols : "col1,col2"_
+- **HIVE_TABLE_BUCKETS_COLS** _This must be a comma separated list of cols : "col1,col2"_
+- **HIVE_TABLE_BUCKETS_NUMBER**
 - **CSV_HEADER**
 - **DELETE_PREVIOUS**
 - **PARQUET_PAGE_SIZE**
