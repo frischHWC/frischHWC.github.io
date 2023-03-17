@@ -11,15 +11,15 @@ nav_order: 1
 
 This tutorial requires a running **CDP 7.1.7+** platform with admin access to Cloudera Manager.
 
-Note that this has been written for _CDP-7.1.7.1000_ and _DATAGEN-0.4.0_, for future releases, please change the repository to point to the new release.
+Note that this has been written for _CDP-7.1.7.1000_ and _DATAGEN-0.4.8_, for future releases, please change the repository to point to the new release.
 
 ## List of links for last release
 
 | CDP Version        | CSD URL           | Parcel URL        |
 |:-------------------|:------------------|:------------------|
-| 7.1.7.0            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.0/7.1.7.0/DATAGEN-0.4.0.7.1.7.0.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.0/7.1.7.0/DATAGEN-0.4.0.7.1.7.0.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.0/7.1.7.0/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.0/7.1.7.0/)             |
-| 7.1.7.1000            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.0/7.1.7.1000/DATAGEN-0.4.0.7.1.7.1000.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.0/7.1.7.1000/DATAGEN-0.4.0.7.1.7.1000.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.0/7.1.7.1000/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.0/7.1.7.1000/)             |
-| 7.1.8.0            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.0/7.1.8.0/DATAGEN-0.4.0.7.1.8.0.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.0/7.1.8.0/DATAGEN-0.4.0.7.1.8.0.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.0/7.1.8.0/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.0/7.1.8.0/)             |
+| 7.1.7.0            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.0/DATAGEN-0.4.8.7.1.7.0.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.0/DATAGEN-0.4.8.7.1.7.0.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.0/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.0/)             |
+| 7.1.7.1000            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.1000/DATAGEN-0.4.8.7.1.7.1000.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.1000/DATAGEN-0.4.8.7.1.7.1000.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.1000/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.1000/)             |
+| 7.1.8.0            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.8.0/DATAGEN-0.4.8.7.1.8.0.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.8.0/DATAGEN-0.4.8.7.1.8.0.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.8.0/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.8.0/)             |
 
 
 
@@ -28,7 +28,7 @@ Note that this has been written for _CDP-7.1.7.1000_ and _DATAGEN-0.4.0_, for fu
 Go to Cloudera Manager and make a wget of this:
 
 ```shell
-wget https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.0/7.1.7.1000/DATAGEN-0.4.0.7.1.7.1000.jar
+wget https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.1000/DATAGEN-0.4.8.7.1.7.1000.jar
 ```
 
 Make a copy of the downloaded jar file into /opt/cloudera/csd/:
@@ -52,7 +52,7 @@ Go to Cloudera Manager, in _Parcels > Parcel Repositories & Network_:
 <img src="images/install-csd-parcel/parcels_repositories_and_network_settings_button.png" width="700">
 
 
-Add this public repository to Cloudera Manager: [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.0/7.1.7.1000](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.0/7.1.7.1000)
+Add this public repository to Cloudera Manager: [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.1000](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.1000)
 
 
 Save & Verify to make sure URL is correct, you should have:
