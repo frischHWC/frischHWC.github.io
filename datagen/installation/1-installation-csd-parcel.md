@@ -15,13 +15,11 @@ Note that this has been written for _CDP-7.1.7.1000_ and _DATAGEN-0.4.8_, for fu
 
 ## List of links for last release
 
-| CDP Version        | CSD URL           | Parcel URL        |
-|:-------------------|:------------------|:------------------|
-| 7.1.7.0            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.0/DATAGEN-0.4.8.7.1.7.0.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.0/DATAGEN-0.4.8.7.1.7.0.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.0/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.0/)             |
-| 7.1.7.1000            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.1000/DATAGEN-0.4.8.7.1.7.1000.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.1000/DATAGEN-0.4.8.7.1.7.1000.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.1000/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.1000/)             |
-| 7.1.8.0            | [https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.8.0/DATAGEN-0.4.8.7.1.8.0.jar](https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.8.0/DATAGEN-0.4.8.7.1.8.0.jar)  | [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.8.0/](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.8.0/)             |
+To get the links corresponding to the Datagen Version you want and your CDP Version, go to the S3 repository and navigate to find links of wanted CSD and Parcels:
 
+https://datagen-repo.s3.eu-west-3.amazonaws.com/index.html 
 
+__Note: Advise is to always go to latest Datagen Version (currenlty 0.4.10)__
 
 ## Setup CSD
 
