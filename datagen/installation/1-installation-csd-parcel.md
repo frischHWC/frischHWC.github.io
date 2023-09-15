@@ -116,10 +116,10 @@ Restart CMS before going on: _Clusters > Cloudera Management Service_ , then _Ac
 
 ## Start Service
 
-Before launching commands, it is required to install urllib3 with following commands:
+Before launching commands, it is required to install jq with following commands:
 
 ```shell
-pip install urllib3
+yum install jq
 ```
 
 In _Actions > Start_.
