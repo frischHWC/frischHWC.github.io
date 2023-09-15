@@ -116,6 +116,12 @@ Restart CMS before going on: _Clusters > Cloudera Management Service_ , then _Ac
 
 ## Start Service
 
+Before launching commands, it is required to install urllib3 with following commands:
+
+```shell
+pip install urllib3
+```
+
 In _Actions > Start_.
 
 Once command pop up launched, you can browse _Role Log_ and click on _Full Log File_: 
