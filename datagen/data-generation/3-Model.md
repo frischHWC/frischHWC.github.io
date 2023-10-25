@@ -333,6 +333,47 @@ An example:
 ```
 
 
+### Ghosts
+
+Any field can be a ghost field. It means that this field will be computed but not yield at the end. 
+
+It is useful to generate one field formed of aggregation or dependent on other fields which should not be yield.
+
+An example on how to create an address using ghost fields and concatenation:
+
+```json
+{
+  "name": "number",
+  "type": "INTEGER",
+  "min": 0,
+  "max": 100,
+  "ghost": "true"
+},
+{
+  "name": "street",
+  "type": "STRING",
+  "possible_values": ["street", "avenue", "boulevard"],
+  "ghost": "true"
+},
+{
+  "name": "name",
+  "type": "NAME",
+  "ghost": "true"
+},
+
+{
+  "name": "address",
+  "type": "STRING",
+  "conditionals": {
+    "injection": "${number} ${street} ${name}"
+  }
+}
+```
+
+In this example, fields number, street and name are generated but not printed, they only serve to create the address field.
+
+
+
 ## Table_Names
 
 These are all available keys to configure where data should be generated:
