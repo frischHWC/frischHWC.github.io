@@ -26,7 +26,7 @@ __Note: Advise is to always go to latest Datagen Version (currenlty 0.4.10)__
 Go to Cloudera Manager and make a wget of this:
 
 ```shell
-wget https://datagen-repo.s3.eu-west-3.amazonaws.com/csd/0.4.8/7.1.7.1000/DATAGEN-0.4.8.7.1.7.1000.jar
+wget https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.12/7.1.9.2/csd/DATAGEN-0.4.12.7.1.9.2.jar
 ```
 
 Make a copy of the downloaded jar file into /opt/cloudera/csd/:
@@ -50,7 +50,7 @@ Go to Cloudera Manager, in _Parcels > Parcel Repositories & Network_:
 <img src="images/install-csd-parcel/parcels_repositories_and_network_settings_button.png" width="700">
 
 
-Add this public repository to Cloudera Manager: [https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.1000](https://datagen-repo.s3.eu-west-3.amazonaws.com/parcels/0.4.8/7.1.7.1000)
+Add this public repository to Cloudera Manager: [https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.12/7.1.9.2/parcels/](https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.12/7.1.9.2/parcels/)
 
 
 Save & Verify to make sure URL is correct, you should have:

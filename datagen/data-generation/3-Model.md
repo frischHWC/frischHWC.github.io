@@ -289,6 +289,7 @@ Formula, is a formula to evaluate where _${field_name}_ are replaced with their 
 }
 ```
 
+__ A formula is evaluated using a java script evaluator (inside an Engine Manager of Java), hence it can have complex compute and even if else statements__
 
 ### Conditionals - Injection
 
@@ -423,6 +424,7 @@ This are all the available keys to configure basic settings for some services:**
 - **HIVE_THREAD_NUMBER**
 - **HIVE_ON_HDFS**
 - **HIVE_TABLE_TYPE** _Can be External, or Managed or Iceberg_
+- **HIVE_TABLE_FORMAT** _Can be Parquet, ORC, Avro, JSON_
 - **HIVE_TEZ_QUEUE_NAME**
 - **HIVE_TABLE_PARTITIONS_COLS** _This must be a comma separated list of cols : "col1,col2"_
 - **HIVE_TABLE_BUCKETS_COLS** _This must be a comma separated list of cols : "col1,col2"_
