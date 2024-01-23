@@ -11,7 +11,7 @@ nav_order: 1
 
 This tutorial requires a running **CDP 7.1.7+** platform with admin access to Cloudera Manager.
 
-Note that this has been written for _CDP-7.1.7.1000_ and _DATAGEN-0.4.8_, for future releases, please change the repository to point to the new release.
+Note that this has been written for _CDP-7.1.9.3_ and _DATAGEN-0.4.13_, for future releases, please change the repository to point to the new release.
 
 ## List of links for last release
 
@@ -26,7 +26,7 @@ __Note: Advise is to always go to latest Datagen Version (currenlty 0.4.10)__
 Go to Cloudera Manager and make a wget of this:
 
 ```shell
-wget https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.12/7.1.9.2/csd/DATAGEN-0.4.12.7.1.9.2.jar
+wget https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.13/7.1.9.3/csd/DATAGEN-0.4.13.7.1.9.2.jar
 ```
 
 Make a copy of the downloaded jar file into /opt/cloudera/csd/:
@@ -50,7 +50,7 @@ Go to Cloudera Manager, in _Parcels > Parcel Repositories & Network_:
 <img src="images/install-csd-parcel/parcels_repositories_and_network_settings_button.png" width="700">
 
 
-Add this public repository to Cloudera Manager: [https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.12/7.1.9.2/parcels/](https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.12/7.1.9.2/parcels/)
+Add this public repository to Cloudera Manager: [https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.13/7.1.9.2/parcels/](https://datagen-repo.s3.eu-west-3.amazonaws.com/0.4.13/7.1.9.2/parcels/)
 
 
 Save & Verify to make sure URL is correct, you should have:
